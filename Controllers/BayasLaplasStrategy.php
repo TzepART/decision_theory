@@ -29,12 +29,14 @@ class BayasLaplasStrategy extends AbstractStrategy
 
         $valueArray = [];
         $solutionArray = [];
+        $newMatrix = [];
 
         foreach ($matrix as $i => $row) {
             $newRow = [];
             foreach ($row as $j => $item) {
                 $newRow[] = $this->arProbabilities[$j]*$item;
             }
+            $newMatrix[]=$newRow;
             $valueArray[] = array_sum($newRow);
             $solutionArray[] = $i;
         }
@@ -44,6 +46,7 @@ class BayasLaplasStrategy extends AbstractStrategy
         //TODO предусмотреть случай с несколькими решениями
         $result['solution'] = $solutionArray[array_search($solutionValue,$valueArray)]+1;
         $result['value'] = $solutionValue;
+        $result['new_matrix'] = $newMatrix;
 
 
         return $result;

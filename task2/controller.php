@@ -39,7 +39,26 @@ if(!empty($arCountElements) && !empty($arProbabilities)&& !empty($cost)&& !empty
             }
         }
 
+        echo '<br>';
+        foreach ($matrix as $index => $row) {
+            echo '| ';
+            foreach ($row as $i => $item) {
+                echo $item.' | ';
+            }
+            echo '<br>';
+        }
+
         $result = $strategy->setArrayProbabilities($arProbabilities)->getOptimalSolution($matrix);
+
+        echo '<br>';
+        foreach ($result['new_matrix'] as $index => $row) {
+            echo '| ';
+            foreach ($row as $i => $item) {
+                echo $item.' | ';
+            }
+            echo '<br>';
+        }
+
         echo 'bayes-laplas <br>';
         echo 'solution '.$result['solution'].'<br>';
         echo 'value '.$result['value'].'<br>';
