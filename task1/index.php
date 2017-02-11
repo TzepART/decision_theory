@@ -5,20 +5,24 @@
     <title>Задача 1</title>
 </head>
 <body>
+<a href="/">Главная</a>
 
-rowCount: <input id='rowCount' type='text' value='4' /><br />
-colCount: <input id='colCount' type='text' value='5' /><br />
-<button onclick="generate()">generate</button>
+<div>
+    rowCount: <input id='rowCount' type='text' value='4' /><br />
+    colCount: <input id='colCount' type='text' value='5' /><br />
+    <button onclick="generate()">generate</button>
 
-<form action="controller.php" method="post">
-    <div id="matrix-form"></div>
+    <form action="controller.php" method="post">
+        <div id="matrix-form"></div>
 
-    <select name="strategy" id="">
-        <option value="minimax">Минимакс</option>
-        <option value="savidg">Сэвидж</option>
-    </select>
-    <input type="submit" value="send">
-</form>
+        <select name="strategy" id="">
+            <option value="minimax">Минимакс</option>
+            <option value="savidg">Сэвидж</option>
+        </select>
+        <input type="submit" value="send">
+    </form>
+</div>
+
 
 <script>
     function generate()

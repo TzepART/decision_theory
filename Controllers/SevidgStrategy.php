@@ -35,9 +35,10 @@ class SevidgStrategy extends AbstractStrategy
         $solution = 0;
         $solutionValue = max($refactorArray[0]);
         foreach ($refactorArray as $index => $row) {
-            if($solutionValue > max($row)){
+            $max = max($row);
+            if($max < $solutionValue){
                 $solution = $index+1;
-                $solutionValue = max($row);
+                $solutionValue = $max;
             }
         }
 

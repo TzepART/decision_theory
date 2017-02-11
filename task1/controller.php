@@ -18,6 +18,7 @@ if(!empty($matrix) && !empty($strategyName)){
     $strategyType = new FactoryStrategies($strategyName);
     $strategy = $strategyType->getStrategy();
 
+    /** @var \Controllers\AbstractStrategy $strategy */
     if($strategy != null){
         $result = $strategy->getOptimalSolution($matrix);
         echo $strategyName.'<br>';

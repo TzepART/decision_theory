@@ -12,7 +12,7 @@ namespace Controllers;
 abstract class AbstractStrategy
 {
     /**
-     * @param $matrix
+     * @param array $matrix
      * @return array
      */
     abstract function getOptimalSolution($matrix);
