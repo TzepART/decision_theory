@@ -29,7 +29,12 @@ if(!empty($arCountElements) && !empty($arProbabilities)&& !empty($cost)&& !empty
         for ($i = 0; $i < $count; $i++){
             $payedCount = $arCountElements[$i];
             foreach ($arCountElements as $j => $realizedCount) {
-                $unrealizedCount = $realizedCount - $payedCount;
+                $unrealizedCount = 0;
+                if($payedCount > $realizedCount){
+                    $unrealizedCount = $realizedCount - $payedCount;
+                }else{
+                    $realizedCount = $payedCount;
+                }
                 $matrix[$i][$j] = $good_price*$realizedCount + $bad_price*$unrealizedCount - $cost*$payedCount;
             }
         }
