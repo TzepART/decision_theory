@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Задача 1</title>
+    <title>Задача 2</title>
 </head>
 <body>
 <a href="/">Главная</a>
