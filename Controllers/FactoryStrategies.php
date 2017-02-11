@@ -9,7 +9,7 @@
 namespace Controllers;
 
 
-class StrategyType
+class FactoryStrategies
 {
     private $strategy = NULL;
 

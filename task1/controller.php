@@ -6,7 +6,7 @@
  * Time: 0:01
  */
 include '../autoloader.php';
-use Controllers\StrategyType;
+use Controllers\FactoryStrategies;
 
 
 $matrix = isset($_POST['matrix']) ? $_POST['matrix'] : null;
@@ -15,7 +15,7 @@ $strategyName = isset($_POST['strategy']) ? $_POST['strategy'] : null;
 
 if(!empty($matrix) && !empty($strategyName)){
 
-    $strategyType = new StrategyType($strategyName);
+    $strategyType = new FactoryStrategies($strategyName);
     $strategy = $strategyType->getStrategy();
 
     if($strategy != null){
