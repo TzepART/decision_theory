@@ -11,6 +11,7 @@ use Controllers\FactoryStrategies;
 
 $matrix = isset($_POST['matrix']) ? $_POST['matrix'] : null;
 $strategyName = isset($_POST['strategy']) ? $_POST['strategy'] : null;
+$coefficient = isset($_POST['coefficient']) ? $_POST['coefficient'] : 0;
 
 
 if(!empty($matrix) && !empty($strategyName)){
@@ -20,7 +21,7 @@ if(!empty($matrix) && !empty($strategyName)){
 
     /** @var \Controllers\AbstractStrategy $strategy */
     if($strategy != null){
-        $result = $strategy->getOptimalSolution($matrix);
+        $result = $strategy->getOptimalSolution($matrix,$coefficient);
         echo $strategyName.'<br>';
         echo 'solution '.$result['solution'].'<br>';
         echo 'value '.$result['value'].'<br>';

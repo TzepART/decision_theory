@@ -18,7 +18,9 @@
         <select name="strategy" id="">
             <option value="minimax">Минимакс</option>
             <option value="savidg">Сэвидж</option>
+            <option value="hurwitz">Гурвица</option>
         </select>
+        <input type="text" value="" name="coefficient" placeholder="Коэффициент">
         <input type="submit" value="send">
     </form>
 </div>

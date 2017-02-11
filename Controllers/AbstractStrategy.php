@@ -13,9 +13,10 @@ abstract class AbstractStrategy
 {
     /**
      * @param array $matrix
+     * @param int $coefficient
      * @return array
      */
-    abstract function getOptimalSolution($matrix);
+    abstract function getOptimalSolution($matrix, $coefficient = 0);
 
     /**
      * @param $array

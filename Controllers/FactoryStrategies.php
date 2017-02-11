@@ -23,6 +23,10 @@ class FactoryStrategies
                 $this->strategy = new MinimaxStrategy();
                 break;
 
+            case HurwitzStrategy::STRATEGY_NAME:
+                $this->strategy = new HurwitzStrategy();
+                break;
+
             default:
                 $this->strategy = null;
         }

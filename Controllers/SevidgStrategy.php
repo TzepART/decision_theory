@@ -15,9 +15,10 @@ class SevidgStrategy extends AbstractStrategy
 
     /**
      * @param array $matrix
+     * @param int $coefficient
      * @return array
      */
-    public function getOptimalSolution($matrix)
+    public function getOptimalSolution($matrix, $coefficient = 0)
     {
         $refactorArray = [];
         $maxArray = [];

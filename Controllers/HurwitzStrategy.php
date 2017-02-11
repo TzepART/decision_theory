@@ -9,9 +9,9 @@
 namespace Controllers;
 
 
-class MinimaxStrategy extends AbstractStrategy
+class HurwitzStrategy extends AbstractStrategy
 {
-    const STRATEGY_NAME = 'minimax';
+    const STRATEGY_NAME = 'hurwitz';
 
     /**
      * @param array $matrix
@@ -20,24 +20,24 @@ class MinimaxStrategy extends AbstractStrategy
      */
     function getOptimalSolution($matrix, $coefficient = 0)
     {
-        $minArray = [];
+        $valueArray = [];
         $solutionArray = [];
-        $tempArray = [];
         $result = [];
 
-        $tempArray = $this->transponirating($matrix);
-
-        foreach ($tempArray as $index => $row) {
-            $minValue = min($row);
-            $minArray[] = $minValue;
-            $solutionArray[] = array_search($minValue,$row);
+        foreach ($matrix as $i => $col) {
+            $max = max($col);
+            $min = min($col);
+            $value = $coefficient*$min+(1-$coefficient)*$max;
+            $valueArray[] = $value;
+            $solutionArray[] = $i;
         }
 
-        $solutionValue = max($minArray);
+        $solutionValue = max($valueArray);
 
         //TODO предусмотреть случай с несколькими решениями
-        $result['solution'] = $solutionArray[array_search($solutionValue,$minArray)]+1;
+        $result['solution'] = $solutionArray[array_search($solutionValue,$valueArray)]+1;
         $result['value'] = $solutionValue;
+
 
         return $result;
     }
