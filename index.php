@@ -7,5 +7,6 @@
 <body>
 
 <a href="/task1/">Задача 1</a>
+<a href="/task2/">Задача 2</a>
 </body>
 </html>

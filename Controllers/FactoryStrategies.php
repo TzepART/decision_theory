@@ -26,6 +26,9 @@ class FactoryStrategies
             case HurwitzStrategy::STRATEGY_NAME:
                 $this->strategy = new HurwitzStrategy();
                 break;
+            case BayasLaplasStrategy::STRATEGY_NAME:
+                $this->strategy = new BayasLaplasStrategy();
+                break;
 
             default:
                 $this->strategy = null;
