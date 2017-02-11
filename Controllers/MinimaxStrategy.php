@@ -34,6 +34,7 @@ class MinimaxStrategy extends AbstractStrategy
 
         $solutionValue = max($minArray);
 
+        //TODO предусмотреть случай с несколькими решениями
         $result['solution'] = $solutionArray[array_search($solutionValue,$minArray)]+1;
         $result['value'] = $solutionValue;
 

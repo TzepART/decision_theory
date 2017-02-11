@@ -5,13 +5,8 @@
  * Date: 08.02.17
  * Time: 0:01
  */
+include '../autoloader.php';
 use Controllers\StrategyType;
-
-function __autoload($classname) {
-    $classname = str_replace('\\','/',$classname);
-    $filename = $classname.".php";
-    include_once($filename);
-}
 
 
 $matrix = isset($_POST['matrix']) ? $_POST['matrix'] : null;
