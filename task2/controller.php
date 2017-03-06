@@ -7,6 +7,7 @@
  */
 include '../autoloader.php';
 use Controllers\FactoryStrategies;
+use Controllers\BayasLaplasStrategy;
 
 
 $arCountElements = isset($_POST['x']) ? $_POST['x'] : null;
@@ -19,10 +20,10 @@ $bad_price = isset($_POST['bad_price']) ? $_POST['bad_price'] : null;
 if(!empty($arCountElements) && !empty($arProbabilities)&& !empty($cost)&& !empty($good_price)&& !empty($bad_price)){
 
     $matrix = [];
-    $strategyType = new FactoryStrategies('bayes-laplas');
-    $strategy = $strategyType->getStrategy();
+    $strategy =     $strategy = FactoryStrategies::getStrategy(BayasLaplasStrategy::STRATEGY_NAME);
 
-    /** @var \Controllers\BayasLaplasStrategy $strategy */
+
+    /** @var BayasLaplasStrategy $strategy */
     if($strategy != null){
         $count = count($arCountElements);
 

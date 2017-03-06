@@ -11,33 +11,33 @@ namespace Controllers;
 
 class FactoryStrategies
 {
-    private $strategy = NULL;
 
-    public function __construct($strategyName) {
-        switch ($strategyName) {
-            case SevidgStrategy::STRATEGY_NAME:
-                $this->strategy = new SevidgStrategy();
-                break;
-
-            case MinimaxStrategy::STRATEGY_NAME:
-                $this->strategy = new MinimaxStrategy();
-                break;
-
-            case HurwitzStrategy::STRATEGY_NAME:
-                $this->strategy = new HurwitzStrategy();
-                break;
-            case BayasLaplasStrategy::STRATEGY_NAME:
-                $this->strategy = new BayasLaplasStrategy();
-                break;
-
-            default:
-                $this->strategy = null;
-        }
+    public function __construct() {
 
     }
 
-    public function getStrategy() {
-        return $this->strategy;
+    public static function getStrategy($strategyName) {
+        switch ($strategyName) {
+            case SevidgStrategy::STRATEGY_NAME:
+                $strategy = new SevidgStrategy();
+                break;
+
+            case MinimaxStrategy::STRATEGY_NAME:
+                $strategy = new MinimaxStrategy();
+                break;
+
+            case HurwitzStrategy::STRATEGY_NAME:
+                $strategy = new HurwitzStrategy();
+                break;
+            case BayasLaplasStrategy::STRATEGY_NAME:
+                $strategy = new BayasLaplasStrategy();
+                break;
+
+            default:
+                $strategy = null;
+        }
+
+        return $strategy;
     }
 
 }

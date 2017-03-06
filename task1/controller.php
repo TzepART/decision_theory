@@ -16,8 +16,7 @@ $coefficient = isset($_POST['coefficient']) ? $_POST['coefficient'] : 0;
 
 if(!empty($matrix) && !empty($strategyName)){
 
-    $strategyType = new FactoryStrategies($strategyName);
-    $strategy = $strategyType->getStrategy();
+    $strategy = FactoryStrategies::getStrategy($strategyName);
 
     /** @var \Controllers\AbstractStrategy $strategy */
     if($strategy != null){
