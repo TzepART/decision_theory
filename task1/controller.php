@@ -8,8 +8,8 @@
 use Controllers\FactoryStrategies;
 include '../autoloader.php';
 
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
 
 $matrix = isset($_POST['matrix']) ? $_POST['matrix'] : null;
@@ -29,12 +29,8 @@ if(!empty($matrix) && !empty($strategyName)){
         echo 'value '.$result['value'].'<br>';
     }
 
-    $loader = new Twig_Loader_Array(array(
-        'index' => 'Hello {{ name }}!',
-    ));
-    $twig = new Twig_Environment($loader);
 
-    echo $twig->render('index', array('name' => 'Fabien'));
+    echo $twig->render('task_respons.html.twig', array('name' => 'Fabien'));
 }
 
 
