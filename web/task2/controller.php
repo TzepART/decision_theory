@@ -27,6 +27,7 @@ if(!empty($arCountElements) && !empty($arProbabilities)&& !empty($cost)&& !empty
     /** @var BayasLaplasStrategy $strategy */
     if($strategy != null){
         $count = count($arCountElements);
+        $solution = '';
 
         for ($i = 0; $i < $count; $i++){
             $payedCount = $arCountElements[$i];
@@ -41,29 +42,31 @@ if(!empty($arCountElements) && !empty($arProbabilities)&& !empty($cost)&& !empty
             }
         }
 
-        echo '<br>';
+        $solution .= '<br>';
         foreach ($matrix as $index => $row) {
-            echo '| ';
+            $solution .= '| ';
             foreach ($row as $i => $item) {
-                echo $item.' | ';
+                $solution .= $item.' | ';
             }
-            echo '<br>';
+            $solution .= '<br>';
         }
 
         $result = $strategy->setArrayProbabilities($arProbabilities)->getOptimalSolution($matrix);
 
-        echo '<br>';
+        $solution .= '<br>';
         foreach ($result['new_matrix'] as $index => $row) {
-            echo '| ';
+            $solution .= '| ';
             foreach ($row as $i => $item) {
-                echo $item.' | ';
+                $solution .= $item.' | ';
             }
-            echo '<br>';
+            $solution .= '<br>';
         }
 
-        echo 'bayes-laplas <br>';
-        echo 'solution '.$result['solution'].'<br>';
-        echo 'value '.$result['value'].'<br>';
+        $solution .= 'bayes-laplas <br>';
+        $solution .= 'solution '.$result['solution'].'<br>';
+        $solution .= 'value '.$result['value'].'<br>';
+
+        echo \App\AppKernel::getInstance()->getTwig()->render('solution.html.twig',['solution' => $solution]);
     }
 }
 

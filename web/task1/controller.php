@@ -22,9 +22,11 @@ if(!empty($matrix) && !empty($strategyName)){
     /** @var \Controllers\AbstractStrategy $strategy */
     if($strategy != null){
         $result = $strategy->getOptimalSolution($matrix,$coefficient);
-        echo $strategyName.'<br>';
-        echo 'solution '.$result['solution'].'<br>';
-        echo 'value '.$result['value'].'<br>';
+        $solution = '';
+        $solution .= $strategyName.'<br>';
+        $solution .= 'solution '.$result['solution'].'<br>';
+        $solution .= 'value '.$result['value'].'<br>';
+        echo \App\AppKernel::getInstance()->getTwig()->render('solution.html.twig',['solution' => $solution]);
     }
 }
 
