@@ -26,10 +26,6 @@ if(!empty($matrix) && !empty($strategyName)){
         echo 'solution '.$result['solution'].'<br>';
         echo 'value '.$result['value'].'<br>';
     }
-
-    $twig = \App\AppKernel::getInstance()->getTwig();
-
-    echo $twig->render('task_respons.html.twig', array('name' => 'Fabien'));
 }
 
 

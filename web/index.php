@@ -1,5 +1,4 @@
 <?php
 include __DIR__.'/autoloader.php';
 
-
-App\AppKernel::getInstance()->getTwig()->render('main.html.twig');
+echo App\AppKernel::getInstance()->getTwig()->render('main.html.twig');
