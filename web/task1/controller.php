@@ -9,9 +9,6 @@ use Controllers\FactoryStrategies;
 
 include __DIR__.'/../autoloader.php';
 
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
 
 $matrix = isset($_POST['matrix']) ? $_POST['matrix'] : null;
 $strategyName = isset($_POST['strategy']) ? $_POST['strategy'] : null;
@@ -30,6 +27,7 @@ if(!empty($matrix) && !empty($strategyName)){
         echo 'value '.$result['value'].'<br>';
     }
 
+    $twig = \App\AppKernel::getInstance()->getTwig();
 
     echo $twig->render('task_respons.html.twig', array('name' => 'Fabien'));
 }

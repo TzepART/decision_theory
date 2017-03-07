@@ -6,6 +6,10 @@
  * Time: 22:59
  */
 use Composer\Autoload\ClassLoader;
+use App\AppKernel;
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
 /**
  * @var ClassLoader $loader
@@ -18,9 +22,13 @@ $loader->addClassMap([
     'Controllers\MinimaxStrategy'=> __DIR__ . '/../src/Controllers/MinimaxStrategy.php',
     'Controllers\SevidgStrategy'=> __DIR__ . '/../src/Controllers/SevidgStrategy.php',
     'Controllers\AbstractStrategy'=> __DIR__ . '/../src/Controllers/AbstractStrategy.php',
+    'App\AppKernel'=> __DIR__ . '/../src/AppKernel.php',
 ]);
 $loader->register();
 $loader->setUseIncludePath(true);
 
+
 $twigLoader = new Twig_Loader_Filesystem(__DIR__ . '/../src/Templates');
 $twig = new Twig_Environment($twigLoader);
+
+AppKernel::getInstance()->setTwig($twig);
