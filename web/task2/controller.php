@@ -5,7 +5,8 @@
  * Date: 08.02.17
  * Time: 0:01
  */
-include '../autoloader.php';
+include __DIR__.'/../autoloader.php';
+
 use Controllers\FactoryStrategies;
 use Controllers\BayasLaplasStrategy;
 
