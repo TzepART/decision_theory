@@ -6,7 +6,7 @@
  * Time: 18:00
  */
 
-namespace Controllers;
+namespace App\Controllers;
 
 
 class HurwitzStrategy extends AbstractStrategy

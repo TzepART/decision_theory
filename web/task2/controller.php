@@ -7,8 +7,8 @@
  */
 include __DIR__.'/../autoloader.php';
 
-use Controllers\FactoryStrategies;
-use Controllers\BayasLaplasStrategy;
+use App\Controllers\FactoryStrategies;
+use App\Controllers\BayasLaplasStrategy;
 
 
 $arCountElements = isset($_POST['x']) ? $_POST['x'] : null;

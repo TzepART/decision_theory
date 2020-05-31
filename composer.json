@@ -1,4 +1,13 @@
 {
+    "name": "tzepart/decision_theory",
+    "license": "proprietary",
+    "type": "project",
+    "description": "Project for researching of methods Decision Theory",
+    "autoload": {
+        "psr-4": {
+            "App\\": ["src/"]
+        }
+    },
     "require": {
         "twig/twig": "~2.0"
     }

@@ -8,7 +8,6 @@
 
 namespace App;
 
-
 class AppKernel
 {
     /**
@@ -46,8 +45,6 @@ class AppKernel
     {
         $this->twig = $twig;
     }
-
-
 
 
     protected function __construct()

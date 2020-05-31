@@ -6,7 +6,7 @@
  * Time: 17:55
  */
 
-namespace Controllers;
+namespace App\Controllers;
 
 
 abstract class AbstractStrategy
